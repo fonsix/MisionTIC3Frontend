@@ -27,6 +27,14 @@ body > main > section:first-of-type {
 	grid-template: 80vh / 50% 50%;
 }
 
+body > main > section:first-of-type > form {
+	display: grid;
+	grid-template-rows: 72px repeat(5, 56px) auto;
+	margin: 0px auto;
+	row-gap: 16px;
+	width: 60%;
+}
+
 body > main > section:last-of-type {
 	display: grid;
 	grid-template: 80vh / 20% 80%;
@@ -59,7 +67,13 @@ body > main > section:last-of-type > aside > a:hover {
 }
 
 body > main > section:last-of-type > form {
-	display: none;
+	display: grid;
+	grid-template: auto / 50% 50%;
+}
+
+body > main > section:last-of-type > form tr > td,
+body > main > section:last-of-type > form tr > th {
+	border: 2px solid #9E9E9E;
 }
 
 body > footer {
@@ -82,14 +96,6 @@ button {
 button[type="submit"] {
 	background-color: #8BC34A;
 	border: 3px solid #689F38;
-}
-
-form {
-	display: grid;
-	grid-template-rows: 72px repeat(5, 56px) auto;
-	margin: 0px auto;
-	row-gap: 16px;
-	width: 60%;
 }
 
 input {
