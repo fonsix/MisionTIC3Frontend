@@ -6,13 +6,14 @@ const api = {
 document.addEventListener('DOMContentLoaded', event => {
     let [ unauthenticated, authenticated ] = document.querySelectorAll('main > section');
     (null == sessionStorage.getItem('user') ? authenticated : unauthenticated).style.setProperty('display', 'none');
+    document.forms['team-manage'].style.setProperty('display', 'none');
     document.querySelectorAll('body > main > section:last-of-type > aside > a').forEach((element, index) => {
         element.addEventListener('click', [
             event => {
-                element.style.setProperty('display', 'none');
+                document.forms['game-manage'].style.setProperty('display', 'none');
             },
             event => {
-                element.style.setProperty('display', 'none');
+                document.forms['team-manage'].style.setProperty('display', 'none');
             },
             event => {
                 authenticated.style.setProperty('display', 'none');
@@ -46,5 +47,11 @@ document.addEventListener('DOMContentLoaded', event => {
             sessionStorage.setItem('user', JSON.stringify(auth.user));
             authenticated.style.removeProperty('display');
         });
+    }, false);
+    document.forms['game-manage'].addEventListener('submit', event => {
+
+    }, false);
+    document.forms['team-manage'].addEventListener('submit', event => {
+
     }, false);
 }, false);
