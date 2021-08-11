@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/theme.css" rel="stylesheet">
+        <script src="script/entity.js"></script>
+        <script src="script/game.js"></script>
+        <script src="script/team.js"></script>
+        <script src="script/user.js"></script>
+        <script src="script/main.js"></script>
+        <title>Misión TIC: Reto para el ciclo 3</title>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section>
+                <form name="user-login">
+                    <h1>Iniciar sesión</h1>
+                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][A-Za-z0-9]*$" placeholder="Nombre de usuario" type="text">
+                    <input maxlength="16" name="password" pattern="^[\x20-\x7E\x81-\xFF]{8,16}$" placeholder="Contraseña" type="password">
+                    <button type="submit">Iniciar sesión</button>
+                </form>
+                <form name="user-save">
+                    <h1>Crear cuenta</h1>
+                    <input maxlength="128" name="fullname" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*(\s[A-Za-zÁÉÍÓÚÜÑáéíóúüñ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*)*$" placeholder="Nombre y Apellidos" type="text">
+                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][A-Za-z0-9]*$" placeholder="Nombre de usuario" type="text">
+                    <input maxlength="128" name="email" placeholder="Correo electrónico" type="email">
+                    <input maxlength="16" name="password" pattern="^[\x20-\x7E\x81-\xFF]{8,16}$" placeholder="Contraseña" type="password">
+                    <button type="submit">Crear cuenta</button>
+                </form>
+            </section>
+            <section>
+                <aside>
+                    <a>Gestión de juegos</a>
+                    <a>Gestión de equipos</a>
+                    <a>Cerrar sesión</a>
+                </aside>
+                <form>
+                    <h1>Gestión de juegos</h1>
+                    <div>
+
+                    </div>
+                    <table>
+                        <caption>
+                            <h1>Listado de juegos</h1>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <tr>Código</tr>
+                                <tr>Nombre</tr>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </form>
+                <form>
+                    <h1>Gestión de equipos</h1>
+                    <div>
+
+                    </div>
+                    <table>
+                        <caption>
+                            <h1>Listado de equipos</h1>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <tr>Código</tr>
+                                <tr>Nombre</tr>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </form>
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+</html>

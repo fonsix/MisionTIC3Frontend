@@ -1,0 +1,136 @@
+* {
+	-webkit-tap-highlight-color: transparent;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	outline: none;
+}
+
+body {
+	color: #37474F;
+	display: grid;
+	grid-template-rows: 12vh 80vh 8vh;
+	height: 100vh;
+	margin: 0px;
+	min-width: 1080px;
+}
+
+body > header {
+	background-color: #8BC34A;
+}
+
+body > main {
+	background-color: #F5F5F5;
+}
+
+body > main > section:first-of-type {
+	display: grid;
+	grid-template: 80vh / 50% 50%;
+}
+
+body > main > section:last-of-type {
+	display: grid;
+	grid-template: 80vh / 20% 80%;
+}
+
+body > main > section:last-of-type > aside {
+	background-color: #E0E0E0;
+	display: grid;
+	grid-template: repeat(5, 59px) / auto;
+}
+
+body > main > section:last-of-type > aside > a {
+	color: #689F38;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 56px;
+	margin: 0px 16px;
+	padding: 0px 8px;
+	transition: padding-left 100ms;
+}
+
+body > main > section:last-of-type > aside > a:not(:first-of-type) {
+	border-top: 3px solid #9E9E9E;
+}
+
+body > main > section:last-of-type > aside > a:hover {
+	padding-left: 16px;
+	text-decoration: underline;
+}
+
+body > main > section:last-of-type > form {
+	display: none;
+}
+
+body > footer {
+	background-color: #263238;
+}
+
+h1 {
+	text-align: center;
+}
+
+button {
+	border-radius: 4px;
+	color: #F5F5F5;
+	cursor: pointer;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 8px;
+}
+
+button[type="submit"] {
+	background-color: #8BC34A;
+	border: 3px solid #689F38;
+}
+
+form {
+	display: grid;
+	grid-template-rows: 72px repeat(5, 56px) auto;
+	margin: 0px auto;
+	row-gap: 16px;
+	width: 60%;
+}
+
+input {
+	background-color: transparent;
+	color: #37474F;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+input::placeholder {
+	color: #9E9E9E;
+}
+
+input:focus::placeholder {
+	color: #689F38;
+}
+
+input[type='email'],
+input[type='password'],
+input[type='text'] {
+	border: 3px solid #9E9E9E;
+	border-radius: 4px;
+	padding: 14px;
+	transition: background-color 100ms, border-color 100ms, color 100ms;
+}
+
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='text']:focus {
+	border-color: #689F38;
+}
+
+input[type='email']:valid:not(:placeholder-shown),
+input[type='password']:valid:not(:placeholder-shown),
+input[type='text']:valid:not(:placeholder-shown) {
+	background-color: #8BC34A33;
+}
+
+input[type='email']:invalid,
+input[type='password']:invalid,
+input[type='text']:invalid {
+	background-color: #E5393533;
+	border-color: #C62828;
+}
