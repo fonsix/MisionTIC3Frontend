@@ -24,10 +24,11 @@ class Entity {
         });
     }
 
-    save(object) {
+    save(object, token) {
         return new Promise((fullfill, reject) => {
             fetch(this.api + this.endpoint, {
                 headers: {
+                    'Authorization': token,
                     'Content-Type': 'application/json'
                 },
                 method: "POST",
