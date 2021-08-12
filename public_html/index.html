@@ -17,14 +17,14 @@
             <section>
                 <form name="user-login">
                     <h1>Iniciar sesión</h1>
-                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][A-Za-z0-9]*$" placeholder="Nombre de usuario" type="text">
+                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][0-9A-Za-z]*$" placeholder="Nombre de usuario" type="text">
                     <input maxlength="16" name="password" pattern="^[\x20-\x7E\x81-\xFF]{8,16}$" placeholder="Contraseña" type="password">
                     <button type="submit">Iniciar sesión</button>
                 </form>
                 <form name="user-save">
                     <h1>Crear cuenta</h1>
                     <input maxlength="128" name="fullname" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*(\s[A-Za-zÁÉÍÓÚÜÑáéíóúüñ][A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*)*$" placeholder="Nombre y Apellidos" type="text">
-                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][A-Za-z0-9]*$" placeholder="Nombre de usuario" type="text">
+                    <input maxlength="64" name="nickname" pattern="^[A-Za-z][0-9A-Za-z]*$" placeholder="Nombre de usuario" type="text">
                     <input maxlength="128" name="email" placeholder="Correo electrónico" type="email">
                     <input maxlength="16" name="password" pattern="^[\x20-\x7E\x81-\xFF]{8,16}$" placeholder="Contraseña" type="password">
                     <button type="submit">Crear cuenta</button>
@@ -41,36 +41,50 @@
                         <h1>Gestión de juegos</h1>
 
                     </div>
-                    <table>
-                        <caption>
-                            <h1>Listado de juegos</h1>
-                        </caption>
-                        <thead>
-                            <tr>
-                                <th>Código</th>
-                                <th>Nombre</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div>
+                        <table>
+                            <caption>
+                                <h1>Listado de juegos</h1>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Código</th>
+                                    <th rowspan="2">Usuario</th>
+                                    <th rowspan="2">Fecha</th>
+                                    <th colspan="2">Equipo local</th>
+                                    <th colspan="2">Equipo visitante</th>
+                                </tr>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Goles</th>
+                                    <th>Nombre</th>
+                                    <th>Goles</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </form>
                 <form name="team-manage">
                     <div>
                         <h1>Gestión de equipos</h1>
-
+                        <input maxlength="128" name="name" pattern="^[0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ][0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*(\s[0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ][0-9A-Za-zÁÉÍÓÚÜÑáéíóúüñ]*)*$" placeholder="Nombre del equipo" type="text">
+                        <button type="submit">Guardar equipo</button>
                     </div>
-                    <table>
-                        <caption>
-                            <h1>Listado de equipos</h1>
-                        </caption>
-                        <thead>
-                            <tr>
-                                <tr>Código</tr>
-                                <tr>Nombre</tr>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
+                    <div>
+                        <table>
+                            <caption>
+                                <h1>Listado de equipos</h1>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
                 </form>
             </section>
         </main>

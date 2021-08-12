@@ -27,7 +27,8 @@ body > main > section:first-of-type {
 	grid-template: 80vh / 50% 50%;
 }
 
-body > main > section:first-of-type > form {
+body > main > section:first-of-type > form,
+body > main > section:last-of-type > form > div:first-of-type {
 	display: grid;
 	grid-template-rows: 72px repeat(5, 56px) auto;
 	margin: 0px auto;
@@ -71,9 +72,23 @@ body > main > section:last-of-type > form {
 	grid-template: auto / 50% 50%;
 }
 
-body > main > section:last-of-type > form tr > td,
-body > main > section:last-of-type > form tr > th {
+body > main > section:last-of-type > form > div > table {
+	border-collapse: collapse;
+	margin: 0px 16px;
+	width: 90%;
+}
+
+body > main > section:last-of-type > form > div > table tr > td,
+body > main > section:last-of-type > form > div > table tr > th {
 	border: 2px solid #9E9E9E;
+	border-left: none;
+	border-right: none;
+	padding: 8px;
+	text-align: center;
+}
+
+body > main > section:last-of-type > form:last-of-type > div > table tr > th {
+	width: 50%;
 }
 
 body > footer {
@@ -118,7 +133,7 @@ input[type='password'],
 input[type='text'] {
 	border: 3px solid #9E9E9E;
 	border-radius: 4px;
-	padding: 14px;
+	padding: 12px;
 	transition: background-color 100ms, border-color 100ms, color 100ms;
 }
 

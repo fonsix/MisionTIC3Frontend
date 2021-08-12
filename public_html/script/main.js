@@ -10,10 +10,30 @@ document.addEventListener('DOMContentLoaded', event => {
     document.querySelectorAll('body > main > section:last-of-type > aside > a').forEach((element, index) => {
         element.addEventListener('click', [
             event => {
-                document.forms['game-manage'].style.setProperty('display', 'none');
+                document.forms['team-manage'].style.setProperty('display', 'none');
+                document.forms['game-manage'].style.removeProperty('display');
+                api.game.findAll(sessionStorage.getItem('token')).then(games => {
+                    let table = document.forms['game-manage'].querySelector('table > tbody');
+                    table.innerHTML = '';
+                    games.forEach(game => {
+                        
+                    });
+                });
             },
             event => {
-                document.forms['team-manage'].style.setProperty('display', 'none');
+                document.forms['game-manage'].style.setProperty('display', 'none');
+                document.forms['team-manage'].style.removeProperty('display');
+                api.team.findAll(sessionStorage.getItem('token')).then(teams => {
+                    let table = document.forms['team-manage'].querySelector('table > tbody');
+                    table.innerHTML = '';
+                    teams.forEach(team => {
+                        let row = table.appendChild(document.createElement('tr'));
+                        let id = row.appendChild(document.createElement('td'));
+                        let name = row.appendChild(document.createElement('td'));
+                        id.textContent = team.id;
+                        name.textContent = team.name;
+                    });
+                });
             },
             event => {
                 authenticated.style.setProperty('display', 'none');
@@ -49,9 +69,19 @@ document.addEventListener('DOMContentLoaded', event => {
         });
     }, false);
     document.forms['game-manage'].addEventListener('submit', event => {
-
+        event.preventDefault();
+        api.game.save({
+            
+        }, sessionStorage.getItem('token')).then(game => {
+            event.target.reset();
+        });
     }, false);
     document.forms['team-manage'].addEventListener('submit', event => {
-
+        event.preventDefault();
+        api.team.save({
+            name: event.target.name.value
+        }, sessionStorage.getItem('token')).then(team => {
+            event.target.reset();
+        });
     }, false);
 }, false);
